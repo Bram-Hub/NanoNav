@@ -29,7 +29,7 @@ print(f'encoder 1 end: {robot.get_enc1()}')
 
 # Stop
 robot.stop()
-robot.sleep(2)
+time.sleep(2)
 
 # Move backward for 2 seconds
 print(f'encoder 2 start: {robot.get_enc2()}')
