@@ -171,7 +171,7 @@ class NanoBot:
         self.m1pwm1.duty_u16(min(self.calc_duty(duty_cycle), self.saturated_duty))
         self.m1pwm2.duty_u16(0)
 
-    def m2_backward(self, duty_cycle):
+    def m1_backward(self, duty_cycle):
         self.m1pwm1.duty_u16(0)
         self.m1pwm2.duty_u16(min(self.calc_duty(duty_cycle), self.saturated_duty))
 

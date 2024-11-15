@@ -152,7 +152,7 @@ class NanoBot:
         """
         pass
 
-    def m2_backward(self, speed):
+    def m1_backward(self, speed):
         """
         Set Motor 1 to turn backward at speed.
 
