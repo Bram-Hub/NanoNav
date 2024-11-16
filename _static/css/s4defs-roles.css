@@ -1,0 +1,56 @@
+/* Colors and Sizes for sphinx documentation
+use like :red `text in red` or :large `large text`
+see https://stackoverflow.com/questions/3702865/sphinx-restructuredtext-set-color-for-a-single-word for more info
+*/
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.orange {
+    color: orange;
+}
+
+.purple {
+    color: purple;
+}
+
+.grey {
+    color: grey;
+}
+
+/* Sizes */
+.small {
+    font-size: small;
+}
+
+.medium {
+    font-size: medium;
+}
+
+.large {
+    font-size: large;
+}
+
+.x-large {
+    font-size: x-large;
+}
+
+.xx-large {
+    font-size: xx-large;
+}

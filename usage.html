@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start &mdash; NanoNav  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/s4defs-roles.css?v=35bf4f2f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bluetooth" href="bluetooth.html" />
+    <link rel="prev" title="Welcome to NanoNav’s documentation." href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NanoNav
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#assembly">Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-using-openmv">Workflow Using OpenMV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-the-arduino-over-usb">Connecting to the Arduino over USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-your-code-on-the-arduino">Running your code on the Arduino</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#micropython">MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bluetooth.html">Bluetooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movement.html">Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NanoNav</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h1>
+<section id="assembly">
+<h2>Assembly<a class="headerlink" href="#assembly" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="_images/parts.jpeg"><img alt="Kit parts" src="_images/parts.jpeg" style="height: 200px;" />
+</a>
+<p>The kit has 5 main parts: the IR sensor bar, Arduino Nano RP2040, wheels, battery (not shown) and MinSeg board. To assemble, insert the battery into the MinSeg kit. This could be a tight fit, so be careful! Line up the terminals of the battery first (they should connect together well), then rock the battery into place.</p>
+<p>Next, insert the Arduino on the top of the MinSeg kit. Each pin on the Arduino has a corresponding connector on the MinSeg kit, so make sure they align. The Arduino should be oriented as shown, with the microUSB connector facing forwards on the kit.</p>
+<a class="reference internal image-reference" href="_images/top_view.jpeg"><img alt="The orientation of the Arduino on the MinSeg kit." src="_images/top_view.jpeg" style="height: 200px;" />
+</a>
+<p>Next, slide the IR sensor bar into the front of the MinSeg board, with the IR sensors facing downwards. The orientation is important so that you do not reverse polarity and burn out the LEDs!</p>
+<a class="reference internal image-reference" href="_images/IR_assembled.jpeg"><img alt="The IR sensors inserted properly." src="_images/IR_assembled.jpeg" style="height: 200px;" />
+</a>
+<p>After that, slide the wheels onto the motor shafts. Be gentle! The wheels and motor shafts have a flat side (D shafts), so make sure the flats align before trying to slide them on! If you have trouble, try facing the outwards bump of the wheels into the kit as shown below:</p>
+<a class="reference internal image-reference" href="_images/wheels.jpeg"><img alt="The motors and wheels." src="_images/wheels.jpeg" style="height: 200px;" />
+</a>
+<p>After that, the kit is assembled. Let’s adjust the settings. On the left side of the MinSeg board, you’ll find three switches, labeled “Pwr Switch”, “Driver Volts”, and “Driver Enable”. When you flip the Power Switch on, you should see lights on the Arduino, MinSeg board, and IR sensors light up. If any of these lights do not light up, something is wrong with your assembly. Make sure you have done the previous steps correctly, including inserting a battery.</p>
+<p>Flipping the Driver Enable switch will allow the Arduino to drive the motors. Switch it to ON.</p>
+<p>Lastly, flip “Driver Volts” to Battery Power. This will draw power from the battery rather than your laptop (which will be disconnected when you run your final code).</p>
+<p>With this assembly and settings, you’ll be ready to go!</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>You will need to download <a class="reference external" href="https://openmv.io/pages/download">OpenMV IDE</a> to transfer your MicroPython code onto the arduino. See <a class="reference internal" href="#workflow"><span class="std std-ref">Workflow Using OpenMV</span></a> for more information about this process.</p>
+<p>Your Arduino Nano RP2040 can run either C++ or MicroPython, but not both at the same time. So before moving on, it is important that the Arduino is configured for MicroPython mode.
+<a class="reference external" href="https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-openmv-setup/">This guide</a> from Arduino will walk you through the process of “bootloading” the Nano RP2040 so that
+you can run MicroPython code on it. After you have done this once, you should not need to do it again.</p>
+<p>To use the NanoNav supplementary code, either download <a class="reference download internal" download="" href="_downloads/e6ffb4613247059f19b76a508c48412c/nanonav.py"><code class="xref download docutils literal notranslate"><span class="pre">nanonav.py</span></code></a> to your project directory</p>
+<p>Or copy the code below into a file called nanonav.py</p>
+<div style="max-height: 50vh; overflow-y: scroll;"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="kn">from</span> <span class="nn">ble_advertising</span> <span class="kn">import</span> <span class="n">advertising_payload</span>
+<span class="linenos">  2</span><span class="kn">import</span> <span class="nn">bluetooth</span>
+<span class="linenos">  3</span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">PWM</span><span class="p">,</span> <span class="n">ADC</span><span class="p">,</span> <span class="n">freq</span>
+<span class="linenos">  4</span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="linenos">  5</span><span class="kn">from</span> <span class="nn">micropython</span> <span class="kn">import</span> <span class="n">const</span>
+<span class="linenos">  6</span><span class="kn">import</span> <span class="nn">rp2</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos">  9</span>
+<span class="linenos"> 10</span><span class="c1"># Define BLE constants (these are not packaged in bluetooth for space efficiency)</span>
+<span class="linenos"> 11</span><span class="n">_IO_CAPABILITY_DISPLAY_ONLY</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 12</span><span class="n">_FLAG_READ</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x0002</span><span class="p">)</span>
+<span class="linenos"> 13</span><span class="n">_FLAG_WRITE</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x0008</span><span class="p">)</span>
+<span class="linenos"> 14</span><span class="n">_IRQ_CENTRAL_CONNECT</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 15</span><span class="n">_IRQ_CENTRAL_DISCONNECT</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 16</span><span class="n">_IRQ_GATTS_WRITE</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="k">class</span> <span class="nc">BLE</span><span class="p">:</span>
+<span class="linenos"> 19</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ble</span><span class="o">=</span><span class="n">bluetooth</span><span class="o">.</span><span class="n">BLE</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NANO RP2040&quot;</span><span class="p">):</span>
+<span class="linenos"> 20</span>        <span class="c1"># Setup bluetooth low energy communication service</span>
+<span class="linenos"> 21</span>        <span class="n">_SERVICE_UUID</span> <span class="o">=</span> <span class="n">bluetooth</span><span class="o">.</span><span class="n">UUID</span><span class="p">(</span><span class="mh">0x1523</span><span class="p">)</span> <span class="c1"># unique service id for the communication</span>
+<span class="linenos"> 22</span>        <span class="n">_NanoNav_CHAR_UUID</span> <span class="o">=</span> <span class="p">(</span><span class="n">bluetooth</span><span class="o">.</span><span class="n">UUID</span><span class="p">(</span><span class="mh">0x1525</span><span class="p">),</span> <span class="n">_FLAG_WRITE</span> <span class="o">|</span> <span class="n">_FLAG_READ</span><span class="p">)</span> <span class="c1"># characteristic</span>
+<span class="linenos"> 23</span>        <span class="n">_NanoNav_SERVICE</span> <span class="o">=</span> <span class="p">(</span><span class="n">_SERVICE_UUID</span><span class="p">,</span> <span class="p">(</span><span class="n">_NanoNav_CHAR_UUID</span><span class="p">,),)</span> <span class="c1"># service to provide the characteristic</span>
+<span class="linenos"> 24</span>
+<span class="linenos"> 25</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span> <span class="o">=</span> <span class="n">ble</span>
+<span class="linenos"> 26</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 27</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">config</span><span class="p">(</span>
+<span class="linenos"> 28</span>            <span class="n">bond</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos"> 29</span>            <span class="n">mitm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos"> 30</span>            <span class="n">le_secure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="linenos"> 31</span>            <span class="n">io</span><span class="o">=</span><span class="n">_IO_CAPABILITY_DISPLAY_ONLY</span>
+<span class="linenos"> 32</span>        <span class="p">)</span>
+<span class="linenos"> 33</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_irq</span><span class="p">)</span>
+<span class="linenos"> 34</span>        <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_handle</span><span class="p">,),)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">gatts_register_services</span><span class="p">((</span><span class="n">_NanoNav_SERVICE</span><span class="p">,))</span>
+<span class="linenos"> 35</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="linenos"> 36</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_payload</span> <span class="o">=</span> <span class="n">advertising_payload</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">services</span><span class="o">=</span><span class="p">[</span><span class="n">_SERVICE_UUID</span><span class="p">])</span>
+<span class="linenos"> 37</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_advertise</span><span class="p">()</span>
+<span class="linenos"> 38</span>        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;a&#39;</span>
+<span class="linenos"> 39</span>
+<span class="linenos"> 40</span>    <span class="k">def</span> <span class="nf">_advertise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval_us</span><span class="o">=</span><span class="mi">500000</span><span class="p">):</span>
+<span class="linenos"> 41</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">gap_advertise</span><span class="p">(</span><span class="n">interval_us</span><span class="p">,</span> <span class="n">adv_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_payload</span><span class="p">)</span>
+<span class="linenos"> 42</span>
+<span class="linenos"> 43</span>    <span class="k">def</span> <span class="nf">_irq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="linenos"> 44</span>        <span class="c1"># handle bluetooth event</span>
+<span class="linenos"> 45</span>        <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="n">_IRQ_CENTRAL_CONNECT</span><span class="p">:</span>
+<span class="linenos"> 46</span>            <span class="c1"># handle succesfull connection</span>
+<span class="linenos"> 47</span>            <span class="n">conn_handle</span><span class="p">,</span> <span class="n">addr_type</span><span class="p">,</span> <span class="n">addr</span> <span class="o">=</span> <span class="n">data</span>
+<span class="linenos"> 48</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">conn_handle</span><span class="p">)</span>
+<span class="linenos"> 49</span>
+<span class="linenos"> 50</span>            <span class="bp">self</span><span class="o">.</span><span class="n">on_connected</span><span class="p">()</span>
+<span class="linenos"> 51</span>
+<span class="linenos"> 52</span>        <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="n">_IRQ_CENTRAL_DISCONNECT</span><span class="p">:</span>
+<span class="linenos"> 53</span>            <span class="c1"># handle disconnect</span>
+<span class="linenos"> 54</span>            <span class="n">conn_handle</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">data</span>
+<span class="linenos"> 55</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">conn_handle</span><span class="p">)</span>
+<span class="linenos"> 56</span>            <span class="bp">self</span><span class="o">.</span><span class="n">_advertise</span><span class="p">()</span>
+<span class="linenos"> 57</span>
+<span class="linenos"> 58</span>            <span class="bp">self</span><span class="o">.</span><span class="n">on_disconnected</span><span class="p">()</span>
+<span class="linenos"> 59</span>
+<span class="linenos"> 60</span>        <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="n">_IRQ_GATTS_WRITE</span><span class="p">:</span>
+<span class="linenos"> 61</span>            <span class="n">conn_handle</span><span class="p">,</span> <span class="n">value_handle</span> <span class="o">=</span> <span class="n">data</span>
+<span class="linenos"> 62</span>            <span class="k">if</span> <span class="n">conn_handle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="p">:</span>
+<span class="linenos"> 63</span>                <span class="c1"># Value has been written to the characteristic</span>
+<span class="linenos"> 64</span>                <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">gatts_read</span><span class="p">(</span><span class="n">value_handle</span><span class="p">)</span>
+<span class="linenos"> 65</span>
+<span class="linenos"> 66</span>    <span class="k">def</span> <span class="nf">on_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 67</span>        <span class="k">pass</span>
+<span class="linenos"> 68</span>
+<span class="linenos"> 69</span>    <span class="k">def</span> <span class="nf">on_disconnected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 70</span>        <span class="k">pass</span>
+<span class="linenos"> 71</span>
+<span class="linenos"> 72</span>    <span class="k">def</span> <span class="nf">send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="linenos"> 73</span>        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="linenos"> 74</span>            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+<span class="linenos"> 75</span>                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">)</span>
+<span class="linenos"> 76</span>            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="linenos"> 77</span>                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="linenos"> 78</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 79</span>                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;send value should be type int, bytes, or string&quot;</span><span class="p">)</span>
+<span class="linenos"> 80</span>        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+<span class="linenos"> 81</span>        <span class="bp">self</span><span class="o">.</span><span class="n">_ble</span><span class="o">.</span><span class="n">gatts_write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_handle</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="linenos"> 82</span>
+<span class="linenos"> 83</span>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 84</span>        <span class="c1">#use the last value written to characteristic</span>
+<span class="linenos"> 85</span>        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span> 
+<span class="linenos"> 86</span>        <span class="k">try</span><span class="p">:</span>
+<span class="linenos"> 87</span>            <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">)</span>
+<span class="linenos"> 88</span>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="linenos"> 89</span>            <span class="k">return</span> <span class="kc">None</span>
+<span class="linenos"> 90</span>
+<span class="linenos"> 91</span><span class="k">class</span> <span class="nc">NanoBot</span><span class="p">:</span>
+<span class="linenos"> 92</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">saturated_duty</span><span class="o">=</span><span class="mi">22000</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="linenos"> 93</span>        <span class="c1"># turn ir sensor pin on (inactive because it&#39;s active low)</span>
+<span class="linenos"> 94</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ir_right_sensor</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="linenos"> 95</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ir_right_sensor</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="linenos"> 96</span>
+<span class="linenos"> 97</span>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="linenos"> 98</span>
+<span class="linenos"> 99</span>        <span class="c1"># ir sensors</span>
+<span class="linenos">100</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ir_left_sensor</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">))</span>
+<span class="linenos">101</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ir_right_sensor</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">))</span>
+<span class="linenos">102</span>
+<span class="linenos">103</span>        <span class="c1"># initialize frequency</span>
+<span class="linenos">104</span>        <span class="n">machine</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">100000000</span><span class="p">)</span>
+<span class="linenos">105</span>
+<span class="linenos">106</span>        <span class="c1"># initialize motors</span>
+<span class="linenos">107</span>        <span class="n">m1pin1</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+<span class="linenos">108</span>        <span class="n">m1pin2</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="linenos">109</span>        <span class="n">m2pin1</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="linenos">110</span>        <span class="n">m2pin2</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+<span class="linenos">111</span>
+<span class="linenos">112</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm1</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">m1pin1</span><span class="p">)</span>
+<span class="linenos">113</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm2</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">m1pin2</span><span class="p">)</span>
+<span class="linenos">114</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm1</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">m2pin1</span><span class="p">)</span>
+<span class="linenos">115</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm2</span> <span class="o">=</span> <span class="n">PWM</span><span class="p">(</span><span class="n">m2pin2</span><span class="p">)</span>
+<span class="linenos">116</span>
+<span class="linenos">117</span>        <span class="c1"># initialize motor constants</span>
+<span class="linenos">118</span>        <span class="bp">self</span><span class="o">.</span><span class="n">max_duty</span> <span class="o">=</span> <span class="mi">65535</span> <span class="c1"># constant</span>
+<span class="linenos">119</span>        <span class="bp">self</span><span class="o">.</span><span class="n">saturated_duty</span> <span class="o">=</span> <span class="n">saturated_duty</span> <span class="c1"># choice for max speed</span>
+<span class="linenos">120</span>        <span class="k">assert</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">saturated_duty</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_duty</span><span class="p">)</span>
+<span class="linenos">121</span>        <span class="bp">self</span><span class="o">.</span><span class="n">turn90ticks</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="linenos">122</span>        <span class="bp">self</span><span class="o">.</span><span class="n">turn_error</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">123</span>        <span class="bp">self</span><span class="o">.</span><span class="n">block_delay</span> <span class="o">=</span> <span class="mi">1550</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span>        <span class="c1"># PID controller constants</span>
+<span class="linenos">126</span>        <span class="bp">self</span><span class="o">.</span><span class="n">battery_scaling</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="linenos">127</span>        <span class="bp">self</span><span class="o">.</span><span class="n">kp</span> <span class="o">=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">battery_scaling</span>
+<span class="linenos">128</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ki</span> <span class="o">=</span> <span class="mf">0.08</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">battery_scaling</span>
+<span class="linenos">129</span>        <span class="bp">self</span><span class="o">.</span><span class="n">kd</span> <span class="o">=</span> <span class="mf">0.04</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">battery_scaling</span>
+<span class="linenos">130</span>
+<span class="linenos">131</span>        <span class="c1"># initialize encoder variables</span>
+<span class="linenos">132</span>        <span class="bp">self</span><span class="o">.</span><span class="n">encpins</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="linenos">133</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1p1</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="linenos">134</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1p2</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="linenos">135</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2p1</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="linenos">136</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2p2</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>
+<span class="linenos">137</span>
+<span class="linenos">138</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">139</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">140</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1dir</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">141</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2dir</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span>        <span class="c1"># add interrupt callbacks to track encoder ticks</span>
+<span class="linenos">144</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1p1</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pin</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc_pin_high</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">)</span>
+<span class="linenos">145</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1p2</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pin</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc_pin_high</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">)</span>
+<span class="linenos">146</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2p1</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pin</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc_pin_high</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">)</span>
+<span class="linenos">147</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2p2</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">pin</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc_pin_high</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">)</span>
+<span class="linenos">148</span>
+<span class="linenos">149</span>        <span class="bp">self</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+<span class="linenos">150</span>
+<span class="linenos">151</span>    <span class="k">def</span> <span class="nf">enc_pin_high</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pin</span><span class="p">):</span>
+<span class="linenos">152</span>        <span class="k">if</span> <span class="n">pin</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">pin</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+<span class="linenos">153</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc1p1</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc1p2</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">154</span>                <span class="bp">self</span><span class="o">.</span><span class="n">enc1</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc1dir</span>
+<span class="linenos">155</span>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc1p1</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">156</span>                <span class="bp">self</span><span class="o">.</span><span class="n">enc1dir</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">157</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">158</span>                <span class="bp">self</span><span class="o">.</span><span class="n">enc1dir</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos">159</span>        <span class="k">if</span> <span class="n">pin</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">or</span> <span class="n">pin</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">encpins</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+<span class="linenos">160</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc2p1</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc2p2</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">161</span>                <span class="bp">self</span><span class="o">.</span><span class="n">enc2</span> <span class="o">+=</span> <span class="mi">1</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc2dir</span>
+<span class="linenos">162</span>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc2p1</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">163</span>                <span class="bp">self</span><span class="o">.</span><span class="n">enc2dir</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos">164</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">165</span>                <span class="bp">self</span><span class="o">.</span><span class="n">enc2dir</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">166</span>
+<span class="linenos">167</span>    <span class="k">def</span> <span class="nf">calc_duty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_100</span><span class="p">):</span>
+<span class="linenos">168</span>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">duty_100</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_duty</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span>
+<span class="linenos">169</span>
+<span class="linenos">170</span>    <span class="k">def</span> <span class="nf">m1_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="p">):</span>
+<span class="linenos">171</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm1</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calc_duty</span><span class="p">(</span><span class="n">duty_cycle</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">saturated_duty</span><span class="p">))</span>
+<span class="linenos">172</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm2</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">173</span>
+<span class="linenos">174</span>    <span class="k">def</span> <span class="nf">m1_backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="p">):</span>
+<span class="linenos">175</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm1</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">176</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm2</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calc_duty</span><span class="p">(</span><span class="n">duty_cycle</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">saturated_duty</span><span class="p">))</span>
+<span class="linenos">177</span>
+<span class="linenos">178</span>    <span class="k">def</span> <span class="nf">m1_signed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="p">):</span>
+<span class="linenos">179</span>        <span class="k">if</span> <span class="n">duty_cycle</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">180</span>            <span class="bp">self</span><span class="o">.</span><span class="n">m1_forward</span><span class="p">(</span><span class="n">duty_cycle</span><span class="p">)</span>
+<span class="linenos">181</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">182</span>            <span class="bp">self</span><span class="o">.</span><span class="n">m2_backward</span><span class="p">(</span><span class="o">-</span><span class="n">duty_cycle</span><span class="p">)</span>
+<span class="linenos">183</span>
+<span class="linenos">184</span>    <span class="k">def</span> <span class="nf">m2_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="p">):</span>
+<span class="linenos">185</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm1</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calc_duty</span><span class="p">(</span><span class="n">duty_cycle</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">saturated_duty</span><span class="p">))</span>
+<span class="linenos">186</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm2</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">187</span>
+<span class="linenos">188</span>    <span class="k">def</span> <span class="nf">m2_backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="p">):</span>
+<span class="linenos">189</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm1</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">190</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm2</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">calc_duty</span><span class="p">(</span><span class="n">duty_cycle</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">saturated_duty</span><span class="p">))</span>
+<span class="linenos">191</span>
+<span class="linenos">192</span>    <span class="k">def</span> <span class="nf">m2_signed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="p">):</span>
+<span class="linenos">193</span>        <span class="k">if</span> <span class="n">duty_cycle</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">194</span>            <span class="bp">self</span><span class="o">.</span><span class="n">m2_forward</span><span class="p">(</span><span class="n">duty_cycle</span><span class="p">)</span>
+<span class="linenos">195</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">196</span>            <span class="bp">self</span><span class="o">.</span><span class="n">m2_backward</span><span class="p">(</span><span class="o">-</span><span class="n">duty_cycle</span><span class="p">)</span>
+<span class="linenos">197</span>
+<span class="linenos">198</span>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">199</span>        <span class="c1"># set all duty cycles to 0</span>
+<span class="linenos">200</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm1</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">201</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm2</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">202</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm1</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">203</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm2</span><span class="o">.</span><span class="n">duty_u16</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">204</span>
+<span class="linenos">205</span>    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">206</span>        <span class="c1"># initialize frequencies</span>
+<span class="linenos">207</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm1</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">208</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m1pwm2</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">209</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm1</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">210</span>        <span class="bp">self</span><span class="o">.</span><span class="n">m2pwm2</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">211</span>
+<span class="linenos">212</span>    <span class="k">def</span> <span class="nf">ir_left</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">213</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ir_left_sensor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">65535</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="linenos">214</span>
+<span class="linenos">215</span>    <span class="k">def</span> <span class="nf">ir_right</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">216</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ir_right_sensor</span><span class="o">.</span><span class="n">read_u16</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">65535</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="linenos">217</span>
+<span class="linenos">218</span>    <span class="k">def</span> <span class="nf">get_enc1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">219</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc1</span>
+<span class="linenos">220</span>
+<span class="linenos">221</span>    <span class="k">def</span> <span class="nf">get_enc2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos">222</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">enc2</span>
+<span class="linenos">223</span>
+<span class="linenos">224</span>    <span class="k">def</span> <span class="nf">set_enc1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="linenos">225</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc1</span> <span class="o">=</span> <span class="n">value</span>
+<span class="linenos">226</span>
+<span class="linenos">227</span>    <span class="k">def</span> <span class="nf">set_enc2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="linenos">228</span>        <span class="bp">self</span><span class="o">.</span><span class="n">enc2</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+</div></section>
+<section id="workflow-using-openmv">
+<span id="workflow"></span><h2>Workflow Using OpenMV<a class="headerlink" href="#workflow-using-openmv" title="Link to this heading"></a></h2>
+<p>Here is how you can program your Arduino. You will need a file called <span class="incremental">main.py</span> that contains your MicroPython code - you can create other files
+and import them as usual, but <span class="incremental">main.py</span> is the one that will be run on the Arduino. We’ll explain a bit more about <a class="reference internal" href="#micropython"><span class="std std-ref">MicroPython</span></a> below. For getting started quickly, we recommend downloading this installation check
+<a class="reference download internal" download="" href="_downloads/df14896bba634131bee7f870285c5b8c/main.py"><code class="xref download docutils literal notranslate"><span class="pre">main.py</span></code></a> to verify that everything is working correctly so far. Alternatively, copy the following into a file called <span class="incremental">main.py</span>:</p>
+<div style="max-height: 50vh; overflow-y: scroll;"><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">nanonav</span> <span class="kn">import</span> <span class="n">BLE</span><span class="p">,</span> <span class="n">NanoBot</span>
+<span class="linenos"> 2</span><span class="kn">import</span> <span class="nn">time</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="c1">### test Bluetooth ###</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="c1"># Create a Bluetooth object</span>
+<span class="linenos"> 7</span><span class="n">ble</span> <span class="o">=</span> <span class="n">BLE</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;NanoNav&quot;</span><span class="p">)</span>  
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">ble</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">response</span> <span class="o">=</span> <span class="n">ble</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos">11</span><span class="c1"># wait until something changes, indicating a response</span>
+<span class="linenos">12</span><span class="k">while</span> <span class="n">response</span> <span class="o">==</span> <span class="mi">43</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="n">response</span> <span class="o">=</span> <span class="n">ble</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="linenos">14</span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received: &quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="c1">### test motors and encoders ###</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="c1"># Create a NanoBot object</span>
+<span class="linenos">21</span><span class="n">robot</span> <span class="o">=</span> <span class="n">NanoBot</span><span class="p">()</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span><span class="c1"># Move forward for 2 seconds</span>
+<span class="linenos">24</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;encoder 1 start: </span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">get_enc1</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">25</span><span class="n">robot</span><span class="o">.</span><span class="n">m1_forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="linenos">26</span><span class="n">robot</span><span class="o">.</span><span class="n">m2_forward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="linenos">27</span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">28</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;encoder 1 end: </span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">get_enc1</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span><span class="c1"># Stop</span>
+<span class="linenos">31</span><span class="n">robot</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="linenos">32</span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span><span class="c1"># Move backward for 2 seconds</span>
+<span class="linenos">35</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;encoder 2 start: </span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">get_enc2</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">36</span><span class="n">robot</span><span class="o">.</span><span class="n">m1_backward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="linenos">37</span><span class="n">robot</span><span class="o">.</span><span class="n">m2_backward</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="linenos">38</span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">39</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;encoder 2 end: </span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">get_enc2</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span><span class="c1"># Stop</span>
+<span class="linenos">42</span><span class="n">robot</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span><span class="c1">### test ir sensors ###</span>
+<span class="linenos">45</span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="linenos">46</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;left: </span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">ir_left</span><span class="p">()</span><span class="si">}</span><span class="s1">    right: </span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">ir_right</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="linenos">47</span>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><p>We recommend creating a folder that you will use for your MicroPython code - put both <span class="incremental">nanonav.py</span> and <span class="incremental">main.py</span> in that folder. Open the OpenMV IDE application. Use the File -&gt; Open Files menu to select the <span class="incremental">main.py</span> file that you downloaded.</p>
+<section id="connecting-to-the-arduino-over-usb">
+<h3>Connecting to the Arduino over USB<a class="headerlink" href="#connecting-to-the-arduino-over-usb" title="Link to this heading"></a></h3>
+<p>Connect your Arduino to your computer using a USB cable. In the bottom left of the OpenMV IDE, you should see this:</p>
+<a class="reference internal image-reference" href="_images/openmv_unconnected.png"><img alt="OpenMV unconnected symbols" src="_images/openmv_unconnected.png" style="height: 100px;" />
+</a>
+<p>If you don’t see this, it means that OpenMV doesn’t recognize the board. You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.). Once you see this, click the “Connect” button (the USB connection, or upper button of the two in the image).</p>
+<p>The arrow below it should turn green when connected.</p>
+<a class="reference internal image-reference" href="_images/openmv_green.png"><img alt="OpenMV connected symbols" src="_images/openmv_green.png" style="height: 100px;" />
+</a>
+<p>After you can see the green arrow, you should be able to see the Arduino as an external drive in FileExplorer (Windows), Finder (Mac), or the equivalent for your Operating System. It will likely be named “NO NAME” and should contain a <span class="incremental">main.py</span> and <span class="incremental">README.txt</span> file. Copy the <span class="incremental">nanonav.py</span> file over to the Arduino (external drive) by either Ctrl-C Ctrl-V or drag-and-drop. This will enable you to import nanonav when you run your code on the board.</p>
+</section>
+<section id="running-your-code-on-the-arduino">
+<h3>Running your code on the Arduino<a class="headerlink" href="#running-your-code-on-the-arduino" title="Link to this heading"></a></h3>
+<p><strong>Laptop mode</strong>: Click the arrow to run the code in conjunction with the laptop. Running in laptop mode is optimal for debugging. You can run and stop your code without touching the Arduino or USB cable. While in laptop mode, you can use print statements to print to the Serial Terminal in the OpenMV IDE. You can expand this terminal by pressing its corresponding button in the bottom left of the IDE. Note that when running in laptop mode, you must have the Arduino connected to the laptop. Once you disconnect the Arduino, your code will no longer be running.</p>
+<p><strong>Solo mode</strong>: To run code without the laptop connected, you need to run in solo mode. Connect to the Arduino but don’t hit the green play. Instead, go to Tools &gt; Save open script to OpenMV Cam (as main.py). This will write the file you have open to the Arduino under the name “main.py”. An alternative way to do this would be to copy the file over in FileExplorer/Finder like we did for nanonav.py. If you copy the file using FileExplorer/Finder, make sure it’s named main.py, as the Arduino looks for and executes only the main.py file. In solo mode, you won’t have access to any print statements or Python exceptions, so only use solo mode after you’ve tested your code in laptop mode.</p>
+<p>We recognize that OpenMV IDE is not a very nice editor to write code in, so feel free to open <span class="incremental">main.py</span> in your favorite editor (such as VS Code) for editing and run it from OpenMV IDE.</p>
+</section>
+</section>
+<section id="micropython">
+<span id="id1"></span><h2>MicroPython<a class="headerlink" href="#micropython" title="Link to this heading"></a></h2>
+<p>In general, MicroPython is very similar to regular Python, but there are some difference we would like to point you to before you begin. MicroPython has its own library of
+packages, which are different from the PyPi packages you may be used to (if you ever <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> anything). We provide helper functions for the ways we think you’ll need to
+interact with the Arduino, Bluetooth, and peripherals, and just about anything you can do in Python 3.11 can also be done in MicroPython, but note that you will not have access to the full standard Python library. For instance, you can import <span class="incremental">time</span> since this has been added to
+MicroPython’s library, but you cannot import <span class="incremental">Queue</span> or other familiar packages. If ever in doubt about whether MicroPython supports a particular package, simply google “MicroPython [package name]”,
+and you will likely find the information you need.
+You can find the MicroPython documentation <a class="reference external" href="https://docs.micropython.org/en/latest/">here</a>.</p>
+</section>
+<section id="next-steps">
+<span id="nextsteps"></span><h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>Now that you have your Arduino set up and running MicroPython, you can start writing your own code. Feel free to take a look at and modify the <span class="incremental">main.py</span> we provided earlier to see a few ways of interacting with
+the Arduino using the <span class="incremental">nanonav</span> library. When you are ready to learn more, take a look at our guides to using <a class="reference internal" href="bluetooth.html#bluetooth"><span class="std std-ref">Bluetooth</span></a>, controlling <a class="reference internal" href="movement.html#movement"><span class="std std-ref">Movement</span></a>, and reading <a class="reference internal" href="sensors.html#sensors"><span class="std std-ref">Sensors</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to NanoNav’s documentation." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bluetooth.html" class="btn btn-neutral float-right" title="Bluetooth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Erik Umble, Joel McCandless, &amp; Chris Kurbiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
