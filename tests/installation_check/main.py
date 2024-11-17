@@ -1,20 +1,6 @@
 from nanonav import BLE, NanoBot
 import time
 
-### test Bluetooth ###
-
-# Create a Bluetooth object
-ble = BLE(name="NanoNav")  
-
-ble.send(43)
-response = ble.read()
-# wait until something changes, indicating a response
-while response == 43:
-    response = ble.read()
-    time.sleep(0.5)
-
-print("Received: ", response)
-
 ### test motors and encoders ###
 
 # Create a NanoBot object
@@ -40,6 +26,20 @@ print(f'encoder 2 end: {robot.get_enc2()}')
 
 # Stop
 robot.stop()
+
+### test Bluetooth ###
+
+# Create a Bluetooth object
+ble = BLE(name="NanoNav")  
+
+ble.send(43)
+response = ble.read()
+# wait until something changes, indicating a response
+while response == 43:
+    response = ble.read()
+    time.sleep(0.5)
+
+print("Received: ", response)
 
 ### test ir sensors ###
 while True:

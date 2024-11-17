@@ -68,7 +68,7 @@ Workflow Using OpenMV
 
 Here is how you can program your Arduino. You will need a file called `main.py` that contains your MicroPython code - you can create other files 
 and import them as usual, but `main.py` is the one that will be run on the Arduino. We'll explain a bit more about :ref:`MicroPython` below. For getting started quickly, we recommend downloading this installation check 
-:download:`main.py </../../tests/installation_check/main.py>` to verify that everything is working correctly so far. Alternatively, copy the following into a file called `main.py`:
+:download:`main.py </../../tests/installation_check/nanonav_starter.zip>` to verify that everything is working correctly so far. Alternatively, copy the following into a file called `main.py`:
 
 .. raw:: html
 
