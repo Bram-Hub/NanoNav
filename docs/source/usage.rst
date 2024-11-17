@@ -88,6 +88,7 @@ Connecting to the Arduino over USB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Connect your Arduino to your computer using a USB cable. Double click the small white button on the top of the Arduino to put the Arduino in bootloader mode.
+
 .. image:: images/rp2040_white_button.jpeg
    :height: 80
    :alt: RP2040 white button
