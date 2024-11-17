@@ -44,22 +44,7 @@ Your Arduino Nano RP2040 can run either C++ or MicroPython, but not both at the 
 `This guide <https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-openmv-setup/>`_ from Arduino will walk you through the process of "bootloading" the Nano RP2040 so that 
 you can run MicroPython code on it. After you have done this once, you should not need to do it again.
 
-To use the NanoNav supplementary code, either download :download:`nanonav.py </../../nanonav.py>` to your project directory
-
-Or copy the code below into a file called nanonav.py
-
-.. raw:: html
-
-   <div style="max-height: 50vh; overflow-y: scroll;">
-
-.. literalinclude:: /../../nanonav.py
-    :language: python
-    :linenos:
-
-.. raw:: html
-
-   </div>
-
+To use the NanoNav supplementary code, download :download:`nanonav.py </../../nanonav.py>` and :download:`ble_advertising.py </../../ble_advertising.py>` to your project directory. This is highly recommended!
    
 ..  _Workflow:
 
