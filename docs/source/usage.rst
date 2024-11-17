@@ -40,6 +40,8 @@ Installation
 ------------
 You will need to download `OpenMV IDE <https://openmv.io/pages/download>`_ to transfer your MicroPython code onto the arduino. See :ref:`Workflow` for more information about this process.
 
+You will also need to install LightBlue on your mobile device for Bluetooth communication. You can download it from the App Store or Google Play Store.
+
 Your Arduino Nano RP2040 can run either C++ or MicroPython, but not both at the same time. So before moving on, it is important that the Arduino is configured for MicroPython mode.
 `This guide <https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-openmv-setup/>`_ from Arduino will walk you through the process of "bootloading" the Nano RP2040 so that 
 you can run MicroPython code on it. After you have done this once, you should not need to do it again.
@@ -107,6 +109,8 @@ After you can see the green arrow, you should be able to see the Arduino as an e
 Running your code on the Arduino
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+You have two options for running your code on the Arduino: laptop mode and solo mode.
+
 **Laptop mode**: Click the arrow to run the code in conjunction with the laptop. Running in laptop mode is optimal for debugging. You can run and stop your code without touching the Arduino or USB cable. While in laptop mode, you can use print statements to print to the Serial Terminal in the OpenMV IDE. You can expand this terminal by pressing its corresponding button in the bottom left of the IDE. Note that when running in laptop mode, you must have the Arduino connected to the laptop. Once you disconnect the Arduino, your code will no longer be running.
 
 **Solo mode**: To run code without the laptop connected, you need to run in solo mode. Connect to the Arduino but don't hit the green play. Instead, go to Tools > Save open script to OpenMV Cam (as main.py). This will write the file you have open to the Arduino under the name "main.py". An alternative way to do this would be to copy the file over in FileExplorer/Finder like we did for nanonav.py. If you copy the file using FileExplorer/Finder, make sure it's named main.py, as the Arduino looks for and executes only the main.py file. In solo mode, you won't have access to any print statements or Python exceptions, so only use solo mode after you've tested your code in laptop mode.
@@ -114,6 +118,22 @@ Running your code on the Arduino
 We recognize that OpenMV IDE is not a very nice editor to write code in, so feel free to open `main.py` in your favorite editor (such as VS Code) for editing and run it from OpenMV IDE.
 
 ..  _MicroPython:
+
+Running our test code
+^^^^^^^^^^^^^^^^^^^^^
+
+When you have doubts about whether your Arduino is functioning properly, try running our test code! Use the `main.py`, `nanonav.py`, and `ble_advertising.py` files from above.
+
+This tests all of the features of the kit: motors, encoders, IR sensors and Bluetooth.
+
+When you run it, you should see the wheels spin forwards first, then backwards after a few seconds. On the Serial Terminal in the OpenMV IDE, you should see the encoder values printed out.
+
+Using your phone, look on LightBlue for a peripheral named something related to Arduino (names may vary). Some examples are: "NanoNav", "Arduino", "MPY Nimble", etc. See `Connecting from Mobile <https://bram-hub.github.io/NanoNav/bluetooth.html#connecting-from-mobile>`_ for more detailed information. Connect to the peripheral and write 0 to the Read/Write characteristic. You should see 0 printed on the Serial Terminal.
+
+After writing over Bluetooth, the IR sensor values should be printed out in the Serial Terminal.
+
+If all of this works, you've verified that your kit works correctly! If not, try our `Troubleshooting <https://bram-hub.github.io/NanoNav/faq.html#troubleshooting>`_. Happy coding!
+
 
 MicroPython
 -----------
