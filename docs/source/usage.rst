@@ -46,9 +46,11 @@ Your Arduino Nano RP2040 can run either C++ or MicroPython, but not both at the 
 `This guide <https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-openmv-setup/>`_ from Arduino will walk you through the process of "bootloading" the Nano RP2040 so that 
 you can run MicroPython code on it. After you have done this once, you should not need to do it again.
 
-To use the NanoNav supplementary code, download :download:`nanonav.py </../../nanonav.py>` and :download:`ble_advertising.py </../../ble_advertising.py>` to your project directory. This is highly recommended!
+To use the NanoNav supplementary code, download this starter zip folder
+ :download:`nanonav_starter.zip </../../tests/installation_check/nanonav_starter.zip>`.
+You will need the `nanonav.py` file as well as the `ble_advertising.py` file for any projects you use NanoNav with. Extract the files from the zip folder; you will need them for the next steps.
 
-This `ble_advertising` file comes from `MicroPython's github repository <https://github.com/micropython/micropython/tree/master>`_. If you're interested, you can check out the latest Open Source developments in MicroPython!
+The `ble_advertising.py` file comes from `MicroPython's github repository <https://github.com/micropython/micropython/tree/master>`_. If you're interested, you can check out the latest Open Source developments in MicroPython!
    
 ..  _Workflow:
 
@@ -56,27 +58,16 @@ Workflow Using OpenMV
 ---------------------
 
 Here is how you can program your Arduino. You will need a file called `main.py` that contains your MicroPython code - you can create other files 
-and import them as usual, but `main.py` is the one that will be run on the Arduino. We'll explain a bit more about :ref:`MicroPython` below. For getting started quickly, we recommend downloading this installation check 
-:download:`main.py </../../tests/installation_check/nanonav_starter.zip>` to verify that everything is working correctly so far. Alternatively, copy the following into a file called `main.py`:
+and import them as usual, but `main.py` is the one that will be run on the Arduino. We'll explain a bit more about :ref:`MicroPython` below. 
+For getting started quickly, we provide a test `main.py` file in the starter zip folder so you can veify everything is working.
 
-.. raw:: html
-
-   <div style="max-height: 50vh; overflow-y: scroll;">
-
-.. literalinclude:: /../../tests/installation_check/main.py
-    :language: python
-    :linenos:
-
-.. raw:: html
-
-   </div>
-
-We recommend creating a folder that you will use for your MicroPython code - put both `nanonav.py` and `main.py` in that folder. Open the OpenMV IDE application. Use the File -> Open Files menu to select the `main.py` file that you downloaded.
+We recommend creating a folder that you will use for your MicroPython code - put each of `nanonav.py`, `ble_advertising.py`, `main.py` in that folder. 
+Open the OpenMV IDE application. Use the File -> Open Files menu to select the `main.py` file that you downloaded.
 
 Connecting to the Arduino over USB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connect your Arduino to your computer using a USB cable. Double click the small white button on the top of the Arduino to put the Arduino in bootloader mode.
+Connect your Arduino to your computer using a USB cable. 
 
 .. image:: images/rp2040_white_button.jpeg
    :height: 80
@@ -88,7 +79,10 @@ In the bottom left of the OpenMV IDE, you should see this:
    :height: 100
    :alt: OpenMV unconnected symbols
 
-If you don't see this, it means that OpenMV doesn't recognize the board. You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.).
+If you don't see this, it means that OpenMV doesn't recognize the board. 
+You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.).
+
+If this still does not work, try putting the Arduino in bootloader mode by double clicking the white button on the top of the board.
 
 Once you see this, click the "Connect" button (the USB connection, or upper button of the two in the image).
 
@@ -104,7 +98,14 @@ The arrow below it should turn green when connected.
    :height: 100
    :alt: OpenMV connected symbols
 
-After you can see the green arrow, you should be able to see the Arduino as an external drive in FileExplorer (Windows), Finder (Mac), or the equivalent for your Operating System. It will likely be named "NO NAME" and should contain a `main.py` and `README.txt` file. Copy the `nanonav.py` file over to the Arduino (external drive) by either Ctrl-C Ctrl-V or drag-and-drop. This will enable you to import nanonav when you run your code on the board.
+After you can see the green arrow, you should be able to see the Arduino as an external drive in FileExplorer (Windows), Finder (Mac), 
+or the equivalent for your Operating System. 
+It will likely be named "NO NAME" and should contain a `main.py` and `README.txt` file. 
+
+.. note::
+   You must copy the the files (not the folder) from :download:`nanonav_starter.zip </../../tests/installation_check/nanonav_starter.zip>` 
+   over to the Arduino (external drive) by either Ctrl-C Ctrl-V or drag-and-drop. 
+   This will enable you to import nanonav when you run your code on the board.
 
 Running your code on the Arduino
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
