@@ -87,13 +87,26 @@ We recommend creating a folder that you will use for your MicroPython code - put
 Connecting to the Arduino over USB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Connect your Arduino to your computer using a USB cable. In the bottom left of the OpenMV IDE, you should see this:
+Connect your Arduino to your computer using a USB cable. Double click the small white button on the top of the Arduino to put the Arduino in bootloader mode.
+.. image:: images/rp2040_white_button.jpeg
+   :height: 80
+   :alt: RP2040 white button
+
+In the bottom left of the OpenMV IDE, you should see this:
 
 .. image:: images/openmv_unconnected.png
    :height: 100
    :alt: OpenMV unconnected symbols
 
-If you don't see this, it means that OpenMV doesn't recognize the board. You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.). Once you see this, click the "Connect" button (the USB connection, or upper button of the two in the image).
+If you don't see this, it means that OpenMV doesn't recognize the board. You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.).
+
+Once you see this, click the "Connect" button (the USB connection, or upper button of the two in the image).
+
+When you try to connect, you may see a popup requesting to load the latest firmware. If you see this, click OK.
+
+.. image:: images/bootload.png
+   :height: 80
+   :alt: Bootloading
 
 The arrow below it should turn green when connected.
 
