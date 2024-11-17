@@ -64,7 +64,7 @@ class NanoBot:
 
     :param saturated_speed: The maximum duty cycle to use for the motors. This is a percentage of max speed the motor can supply from 0-100. If you find that your NanoBot is driving too fast or not driving fast enough, try changing this value.
     """
-    def __init__(self, saturated_speed=33, *args, **kwargs):
+    def __init__(self, saturated_duty=33, *args, **kwargs):
 
         # turn ir sensor pin on (inactive because it's active low)
         self.ir_right_sensor = Pin(28, Pin.OUT)
@@ -80,8 +80,8 @@ class NanoBot:
         machine.freq(100000000)
 
         # initialize motors
-        m1pin1 = Pin(21)
-        m1pin2 = Pin(4)
+        m1pin1 = Pin(4)
+        m1pin2 = Pin(5)
         m2pin1 = Pin(18)
         m2pin2 = Pin(17)
 

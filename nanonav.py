@@ -104,8 +104,8 @@ class NanoBot:
         machine.freq(100000000)
 
         # initialize motors
-        m1pin1 = Pin(21)
-        m1pin2 = Pin(4)
+        m1pin1 = Pin(4)
+        m1pin2 = Pin(5)
         m2pin1 = Pin(18)
         m2pin2 = Pin(17)
 
