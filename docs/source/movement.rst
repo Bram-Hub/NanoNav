@@ -32,7 +32,7 @@ Quick Example
 
     # Stop
     robot.stop()
-    robot.sleep(2)
+    time.sleep(2)
 
     # Move backward for 2 seconds
     robot.m1_backward(30)
