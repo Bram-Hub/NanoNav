@@ -69,4 +69,45 @@ above picture, you can click the :blue:`Read Again` button as often as you would
 change when you (or NanoNav) writes to it. And you can send a number as often as you want in LightBlue, but NanoNav will not know unless you program it to 
 read the value periodically. (Actually, you can setup BLE interrupts for NanoNav to run code when something changes in the BLE connection, similar to the :py:meth:`~nanonav.BLE.on_connected` and :py:meth:`~nanonav.BLE.on_disconnected`, but we think 
 you'll have an easier time getting your code to work as expected by avoiding that kind of programming for now).
-If interested in learning about other bluetooth capabilities beyond the scope of NanoNav, see `here <https://docs.micropython.org/en/latest/library/bluetooth.html>`_.
+
+Event Handlers (Optional)
+-------------------------
+MicroPython enables a variety of event handlers to be used with Bluetooth. Unless you want to explore the details of the BLE object,
+the two most accessible event handlers are for when a device connects or disconnects from your NanoNav.
+
+.. code-block:: python
+
+    from nanonav import BLE
+    import time
+
+    _IRQ_GATTC_WRITE_DONE = const(17)
+
+    class MyBLE(BLE):
+      # Don't override the __init__ method, unless you know what you're doing
+
+      # You can create these methods to handle connection and disconnection events
+      def on_connected(self):
+        print("Connected established with NanoNav")
+
+      def on_disconnected(self):
+        print("Disconnected from NanoNav")
+
+      # For advanced event handling use cases:
+      def _irq(self, event, data):
+        if event == _IRQ_GATTC_WRITE_DONE:
+            print("Data written successfully to Bluetooth characteristic")
+        super()._irq(event, data)
+
+    # Create an instance of your subclass
+    ble = MyBLE(name="NanoNav")  
+
+    ble.send(43)
+    response = ble.read()
+    # wait until something changes, indicating a response
+    while response == 43:
+        response = ble.read()
+	      time.sleep(0.5)
+
+    print("Received: ", response)
+
+If interested in learning about other Bluetooth events or capabilities beyond the scope of NanoNav, see `here <https://docs.micropython.org/en/latest/library/bluetooth.html>`_.

@@ -48,13 +48,13 @@ class BLE:
 
     def on_connected(self):
         """
-        You may specify this method to be called once the BLE connection is established.
+        You may create this method in a subclass of BLE to be called once the BLE connection is established.
         """
         pass
 
     def on_disconnected(self):
         """
-        You may specify this method to be called once the BLE connection is lost.
+        You may create this method in a subclass of BLE to be called once the BLE connection is lost.
         """
         pass
 
