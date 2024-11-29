@@ -97,6 +97,12 @@ When the Arduino is connected (as indicated by the green arrow), you should be a
 or the equivalent for your Operating System. 
 It will likely be named "NO NAME" or "USB Drive" and should contain a `main.py` and `README.txt` file. 
 
+When you open the drive on your computer, it may ask you to reformat the drive. If so, select "Format Disk".
+
+.. image:: images/format_disk.PNG
+   :height: 100
+   :alt: Format Disk popup
+
 .. note::
    You must copy the the files (not the folder) from :download:`nanonav_starter.zip </../../tests/installation_check/nanonav_starter.zip>` 
    over to the Arduino (external drive) by either Ctrl-C Ctrl-V or drag-and-drop. 
