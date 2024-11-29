@@ -77,11 +77,7 @@ In the bottom left of the OpenMV IDE, you should see this:
 If you don't see this, it means that OpenMV doesn't recognize the board. 
 You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.).
 
-If this still does not work, try putting the Arduino in bootloader mode by double clicking the white button on the top of the board.
-
-.. image:: images/rp2040_white_button.jpeg
-   :height: 80
-   :alt: RP2040 white button
+If this still does not work, `try putting the Arduino in bootloader mode <https://bram-hub.github.io/NanoNav/faq.html#arduino-not-connecting-to-openmv>`_.
 
 Once you see the "Connect" button, click it (the USB connection, or upper button of the two in the image).
 

@@ -9,7 +9,13 @@ Troubleshooting
 Arduino not connecting to OpenMV
 --------------------------------
 
-If your Arduino is not connecting to OpenMV, either because OpenMV is loading forever, or because the cursor is flickering between loading and a pointer, you should reset your board. Do this by double tapping the button on top of the Arduino. This will reset the board. Wait for OpenMV to update. When OpenMV updates, it should offer to load the latest firmware. Agree and load the firmware, and hopefully the Arduino will connect.
+If your Arduino is not connecting to OpenMV, either because OpenMV is loading forever, or because the cursor is flickering between loading and a pointer, you should reset your board. Do this by double tapping the button on top of the Arduino. This will reset the board.
+
+.. image:: images/rp2040_white_button.jpeg
+   :height: 80
+   :alt: RP2040 white button
+
+Wait for OpenMV to update. When OpenMV updates, it should offer to load the latest firmware. Agree and load the firmware, and hopefully the Arduino will connect.
 
 If this doesn't work, it's probably because your code has a frequently repeating while loop which keeps the Arduino occupied. Keep trying to reset the board by double pressing the top button, or open Finder or FileExplorer, open the board's external drive, and replace its main.py (your code) with a basic main.py such as :download:`blink_LED.py <../../tests/installation_check/blink_LED.py>`. This should enable the Arduino to connect.
 
