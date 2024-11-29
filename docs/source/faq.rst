@@ -33,7 +33,7 @@ IR sensor has both LEDs lit regardless of sensor state
 We've noticed a problem with some of the boards where the right IR sensor has both LEDs on, regardless of whether the sensor is in front of a white or black surface:
 
 .. image:: images/ir_2_lights_on.jpeg
-    :height: 80
+    :height: 120
     :alt: IR sensor with 2 lights on
     
 If you're noticing this, add
