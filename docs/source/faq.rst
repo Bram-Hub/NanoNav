@@ -9,7 +9,7 @@ Troubleshooting
 Why are the wheels of my robot spinning at full speed after I stop my program?
 -------------------------------------------------------------------------------
 
-This behavior is expected because of `how Pulse Width Modulation (PWM) works <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. If you stop your program with your motors on at any speed, there is a chance that the program will terminate with your motor spinning HIGH. The Arduino will continue its last instruction, making the motor spin at full speed until the next time you run code. To avoid this, call `robot.stop()`` before the program ends, or flip the "Driver Enable" switch off to disable the motor hardware (remember to turn it back on when you want to spin the motors again!).
+This behavior is expected because of `how Pulse Width Modulation (PWM) works <https://learn.sparkfun.com/tutorials/pulse-width-modulation/all>`_. If you stop your program with your motors on at any speed, there is a chance that the program will terminate with your motor spinning HIGH. The Arduino will continue its last instruction, making the motor spin at full speed until the next time you run code. To avoid this, call ``robot.stop()`` before the program ends, or flip the "Driver Enable" switch off to disable the motor hardware (remember to turn it back on when you want to spin the motors again!).
 
 
 Arduino not connecting to OpenMV
@@ -48,7 +48,7 @@ to your import statements and add the line
 
     Pin(28, Pin.OUT).on()
 
-after your imports and before `robot = NanoBot()`.
+after your imports and before ``robot = NanoBot()``.
 
 Strange problems with code which was just working
 -------------------------------------------------
