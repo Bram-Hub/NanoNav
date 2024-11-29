@@ -21,6 +21,29 @@ If this doesn't work, it's probably because your code has a frequently repeating
 
 If you still cannot get the Arduino to connect, it could be a problem on your computer. Try changing the port you're using to connect to the Arduino.
 
+IR sensor has both LEDs lit regardless of sensor state
+------------------------------------------------------
+
+We've noticed a problem with some of the boards where the right IR sensor has both LEDs on, regardless of whether the sensor is in front of a white or black surface:
+
+.. image:: images/ir_2_lights_on.jpeg
+    :height: 80
+    :alt: IR sensor with 2 lights on
+    
+If you're noticing this, add
+
+.. code-block:: python
+
+    from machine import Pin
+
+to your import statements and add the line 
+
+.. code-block:: python
+
+    Pin(28, Pin.OUT).on()
+
+after your imports and before `robot = NanoBot()`.
+
 Strange problems with code which was just working
 -------------------------------------------------
 
