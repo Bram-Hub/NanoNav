@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start &mdash; NanoNav  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/s4defs-roles.css?v=35bf4f2f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bluetooth" href="bluetooth.html" />
+    <link rel="prev" title="Welcome to NanoNav’s documentation." href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NanoNav
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#assembly">Assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-using-openmv">Workflow Using OpenMV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-the-arduino-over-usb">Connecting to the Arduino over USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-your-code-on-the-arduino">Running your code on the Arduino</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-our-test-code">Running our test code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">MicroPython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bluetooth.html">Bluetooth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movement.html">Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NanoNav</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h1>
+<section id="assembly">
+<h2>Assembly<a class="headerlink" href="#assembly" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="_images/parts.jpeg"><img alt="Kit parts" src="_images/parts.jpeg" style="height: 200px;" />
+</a>
+<p>The kit has 5 main parts: the IR sensor bar, Arduino Nano RP2040, wheels, battery (not shown) and MinSeg board. To assemble, insert the battery into the MinSeg kit. This could be a tight fit, so be careful! Line up the terminals of the battery first (they should connect together well), then rock the battery into place.</p>
+<p>Next, insert the Arduino on the top of the MinSeg kit. Each pin on the Arduino has a corresponding connector on the MinSeg kit, so make sure they align. The Arduino should be oriented as shown, with the microUSB connector facing forwards on the kit.</p>
+<a class="reference internal image-reference" href="_images/top_view.jpeg"><img alt="The orientation of the Arduino on the MinSeg kit." src="_images/top_view.jpeg" style="height: 200px;" />
+</a>
+<p>Next, slide the IR sensor bar into the front of the MinSeg board, with the IR sensors facing downwards. The orientation is important so that you do not reverse polarity and burn out the LEDs!</p>
+<a class="reference internal image-reference" href="_images/IR_assembled.jpeg"><img alt="The IR sensors inserted properly." src="_images/IR_assembled.jpeg" style="height: 200px;" />
+</a>
+<p>After that, slide the wheels onto the motor shafts. Be gentle! The wheels and motor shafts have a flat side (D shafts), so make sure the flats align before trying to slide them on! If you have trouble, try facing the outwards bump of the wheels into the kit as shown below:</p>
+<a class="reference internal image-reference" href="_images/wheels.jpeg"><img alt="The motors and wheels." src="_images/wheels.jpeg" style="height: 200px;" />
+</a>
+<p>After that, the kit is assembled. Let’s adjust the settings. On the left side of the MinSeg board, you’ll find three switches, labeled “Pwr Switch”, “Driver Volts”, and “Driver Enable”. When you flip the Power Switch on, you should see lights on the Arduino, MinSeg board, and IR sensors light up. If any of these lights do not light up, something is wrong with your assembly. Make sure you have done the previous steps correctly, including inserting a battery.</p>
+<p>Flipping the Driver Enable switch will allow the Arduino to drive the motors. Switch it to ON.</p>
+<p>Lastly, flip “Driver Volts” to Battery Power. This will draw power from the battery rather than your laptop (which will be disconnected when you run your final code).</p>
+<p>With this assembly and settings, you’ll be ready to go!</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>You will need to download <a class="reference external" href="https://openmv.io/pages/download">OpenMV IDE</a> to transfer your MicroPython code onto the arduino. See <a class="reference internal" href="#workflow"><span class="std std-ref">Workflow Using OpenMV</span></a> for more information about this process.</p>
+<p>You will also need to install LightBlue on your mobile device for Bluetooth communication. You can download it from the App Store or Google Play Store.</p>
+<p>Your Arduino Nano RP2040 can run either C++ or MicroPython, but not both at the same time. So before moving on, it is important that the Arduino is configured for MicroPython mode.
+<a class="reference external" href="https://docs.arduino.cc/tutorials/nano-rp2040-connect/rp2040-openmv-setup/">This guide</a> from Arduino will walk you through the process of “bootloading” the Nano RP2040 so that
+you can run MicroPython code on it. After you have done this once, you should not need to do it again.</p>
+<p>To use the NanoNav supplementary code, download this starter zip folder <a class="reference download internal" download="" href="_downloads/181d067ce2d1245840fe76af1f50b2d5/nanonav_starter.zip"><code class="xref download docutils literal notranslate"><span class="pre">nanonav_starter.zip</span></code></a>.
+You will need the <span class="incremental">nanonav.py</span> file as well as the <span class="incremental">ble_advertising.py</span> file for any projects you use NanoNav with. Extract the files from the zip folder; you will use them for the next steps.</p>
+<p>The <span class="incremental">ble_advertising.py</span> file comes from <a class="reference external" href="https://github.com/micropython/micropython/tree/master">MicroPython’s github repository</a>. If you’re interested, you can check out the latest Open Source developments in MicroPython!</p>
+</section>
+<section id="workflow-using-openmv">
+<span id="workflow"></span><h2>Workflow Using OpenMV<a class="headerlink" href="#workflow-using-openmv" title="Link to this heading"></a></h2>
+<p>Here is how you can program your Arduino. You will need a file called <span class="incremental">main.py</span> that contains your MicroPython code - you can create other files
+and import them as usual, but <span class="incremental">main.py</span> is the one that will be run on the Arduino. We’ll explain a bit more about <a class="reference internal" href="#micropython"><span class="std std-ref">Running our test code</span></a> below.
+For getting started quickly, we provide a test <span class="incremental">main.py</span> file in the starter zip folder so you can veify everything is working.</p>
+<p>We recommend creating a folder that you will use for your MicroPython code - put each of <span class="incremental">nanonav.py</span>, <span class="incremental">ble_advertising.py</span>, <span class="incremental">main.py</span> in that folder.
+Open the OpenMV IDE application. Use the File -&gt; Open Files menu to select the <span class="incremental">main.py</span> file that you downloaded.</p>
+<section id="connecting-to-the-arduino-over-usb">
+<h3>Connecting to the Arduino over USB<a class="headerlink" href="#connecting-to-the-arduino-over-usb" title="Link to this heading"></a></h3>
+<p>Connect your Arduino to your computer using a USB cable.</p>
+<p>In the bottom left of the OpenMV IDE, you should see this:</p>
+<a class="reference internal image-reference" href="_images/openmv_unconnected.png"><img alt="OpenMV unconnected symbols" src="_images/openmv_unconnected.png" style="height: 100px;" />
+</a>
+<p>If you don’t see this, it means that OpenMV doesn’t recognize the board.
+You can wait for a little and try messing with your USB conection (different cable, different port, unplug/replug, etc.).</p>
+<p>If this still does not work, <a class="reference external" href="https://bram-hub.github.io/NanoNav/faq.html#arduino-not-connecting-to-openmv">try putting the Arduino in bootloader mode</a>.</p>
+<p>Once you see the “Connect” button, click it (the USB connection, or upper button of the two in the image).</p>
+<p>When you try to connect, you may see a popup requesting to load the latest firmware. If you see this, click OK.</p>
+<a class="reference internal image-reference" href="_images/bootload.png"><img alt="Bootloading" src="_images/bootload.png" style="height: 80px;" />
+</a>
+<p>The arrow below it should turn green when connected.</p>
+<a class="reference internal image-reference" href="_images/openmv_green.png"><img alt="OpenMV connected symbols" src="_images/openmv_green.png" style="height: 100px;" />
+</a>
+<p>When the Arduino is connected (as indicated by the green arrow), you should be able to find the Arduino as an external drive in FileExplorer (Windows), Finder (Mac),
+or the equivalent for your Operating System.
+It will likely be named “NO NAME” or “USB Drive” and should contain a <span class="incremental">main.py</span> and <span class="incremental">README.txt</span> file.</p>
+<p>When you open the drive on your computer, it may ask you to reformat the drive. If so, select “Format Disk”.</p>
+<a class="reference internal image-reference" href="_images/format_disk.PNG"><img alt="Format Disk popup" src="_images/format_disk.PNG" style="height: 100px;" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must copy the the files (not the folder) from <a class="reference download internal" download="" href="_downloads/181d067ce2d1245840fe76af1f50b2d5/nanonav_starter.zip"><code class="xref download docutils literal notranslate"><span class="pre">nanonav_starter.zip</span></code></a>
+over to the Arduino (external drive) by either Ctrl-C Ctrl-V or drag-and-drop.
+This will enable you to import nanonav when you run your code on the board.</p>
+</div>
+</section>
+<section id="running-your-code-on-the-arduino">
+<h3>Running your code on the Arduino<a class="headerlink" href="#running-your-code-on-the-arduino" title="Link to this heading"></a></h3>
+<p>You have two options for running your code on the Arduino: laptop mode and solo mode.</p>
+<p><strong>Laptop mode</strong>: Click the arrow to run the code in conjunction with the laptop. Running in laptop mode is optimal for debugging. You can run and stop your code without touching the Arduino or USB cable. While in laptop mode, you can use print statements to print to the Serial Terminal in the OpenMV IDE. You can expand this terminal by pressing its corresponding button in the bottom left of the IDE. Note that when running in laptop mode, you must have the Arduino connected to the laptop. Once you disconnect the Arduino, your code will no longer be running.</p>
+<p><strong>Solo mode</strong>: To run code without the laptop connected, you need to run in solo mode. Connect to the Arduino but don’t hit the green play. Instead, go to Tools &gt; Save open script to OpenMV Cam (as main.py). This will write the file you have open to the Arduino under the name “main.py”. An alternative way to do this would be to copy the file over in FileExplorer/Finder like we did for the starter files. If you copy the file using FileExplorer/Finder, make sure it’s named main.py, as the Arduino looks for and executes only the main.py file. In solo mode, you won’t have access to any print statements or Python exceptions, so only use solo mode after you’ve tested your code in laptop mode.</p>
+<p>We recognize that OpenMV IDE is not a very nice editor to write code in, so feel free to open <span class="incremental">main.py</span> in your favorite editor (such as VS Code) for editing and run it from OpenMV IDE.</p>
+</section>
+<section id="running-our-test-code">
+<span id="micropython"></span><h3>Running our test code<a class="headerlink" href="#running-our-test-code" title="Link to this heading"></a></h3>
+<p>When you have doubts about whether your Arduino is functioning properly, try running our test code! Use the <span class="incremental">main.py</span>, <span class="incremental">nanonav.py</span>, and <span class="incremental">ble_advertising.py</span> files from <a class="reference download internal" download="" href="_downloads/181d067ce2d1245840fe76af1f50b2d5/nanonav_starter.zip"><code class="xref download docutils literal notranslate"><span class="pre">nanonav_starter.zip</span></code></a>.</p>
+<p>This tests all of the features of the kit: motors, encoders, IR sensors and Bluetooth.</p>
+<p>When you run it, you should see the wheels spin forwards first, then backwards after a few seconds. On the Serial Terminal in the OpenMV IDE, you should see the encoder values printed out.</p>
+<p>Using your phone, look on LightBlue for a peripheral named something related to Arduino (names may vary). Some examples are: “NanoNav”, “Arduino”, “MPY Nimble”, etc. See <a class="reference external" href="https://bram-hub.github.io/NanoNav/bluetooth.html#connecting-from-mobile">Connecting from Mobile</a> for more detailed information. Connect to the peripheral and write 0 to the Read/Write characteristic. You should see 0 printed on the Serial Terminal.</p>
+<p>After writing over Bluetooth, the IR sensor values should be printed out in the Serial Terminal.</p>
+<p>If all of this works, you’ve verified that your kit works correctly! If not, try our <a class="reference external" href="https://bram-hub.github.io/NanoNav/faq.html#troubleshooting">Troubleshooting</a>. Happy coding!</p>
+</section>
+</section>
+<section id="id1">
+<h2>MicroPython<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>In general, MicroPython is very similar to regular Python, but there are some difference we would like to point you to before you begin. MicroPython has its own library of
+packages, which are different from the PyPi packages you may be used to (if you ever <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> anything). We provide helper functions for the ways we think you’ll need to
+interact with the Arduino, Bluetooth, and peripherals, and just about anything you can do in Python 3.11 can also be done in MicroPython, but note that you will not have access to the full standard Python library. For instance, you can import <span class="incremental">time</span> since this has been added to
+MicroPython’s library, but you cannot import <span class="incremental">Queue</span> or other familiar packages. If ever in doubt about whether MicroPython supports a particular package, simply google “MicroPython [package name]”,
+and you will likely find the information you need.
+You can find the MicroPython documentation <a class="reference external" href="https://docs.micropython.org/en/latest/">here</a>.</p>
+</section>
+<section id="next-steps">
+<span id="nextsteps"></span><h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<p>Now that you have your Arduino set up and running MicroPython, you can start writing your own code. Feel free to take a look at and modify the <span class="incremental">main.py</span> we provided earlier to see a few ways of interacting with
+the Arduino using the <span class="incremental">nanonav</span> library. When you are ready to learn more, take a look at our guides to using <a class="reference internal" href="bluetooth.html#bluetooth"><span class="std std-ref">Bluetooth</span></a>, controlling <a class="reference internal" href="movement.html#movement"><span class="std std-ref">Movement</span></a>, and reading <a class="reference internal" href="sensors.html#sensors"><span class="std std-ref">Sensors</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to NanoNav’s documentation." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bluetooth.html" class="btn btn-neutral float-right" title="Bluetooth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Erik Umble, Joel McCandless, &amp; Chris Kurbiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
