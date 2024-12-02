@@ -50,6 +50,13 @@ to your import statements and add the line
 
 after your imports and before ``robot = NanoBot()``.
 
+I connected once over LightBlue, but now I can't connect again!
+---------------------------------------------------------------
+
+Run your code with the Arduino connected to your laptop to ensure that your code has no errors. Often, if you connect to Bluetooth first, your code may have a syntax error which prevents the Arduino from running it.
+
+If you still can't find your Arduino on LightBlue and there are no errors running the code, LightBlue may have automatically renamed your Arduino. We've noticed this commonly on iOS, where the Arduino may be renamed to names such as "MPY NIMBLE", "RP2040 CONNECT", and others. If you can't find your Arduino via search, try scrolling through nearby peripherals and look for a name that could be your Arduino. If you think you found it, connect to the device and click "Advertisement Data". Here, you should see a local name which would be the name you expected it to advertise at (e.g. "NanoNav" in our test code). If you see the name matches what you'd expect, you've found your Arduino.
+
 Strange problems with code which was just working
 -------------------------------------------------
 
