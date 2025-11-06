@@ -94,8 +94,11 @@ Running the Test Code
 Use the `main.py`, `nanonav.py`, and `ble_advertising.py` from the starter zip to verify your Arduino:
 
 You should have copied the files to the Arduino drive. Now, run the code in **Laptop Mode** by clicking **Run** in Arduino Lab while you have the `main.py` file open and the Arduino connected via USB.
+
 - The wheels should spin forward and backward.
+
 - The Serial Monitor should display encoder values.
+
 - Using your phone's BLE scanner, find a peripheral named "NanoNav" or "MPY Nimble". Write a character to the characteristic; the Console should display the ascii value of the character you sent, then send IR sensor values.
 
 If everything works, your kit is functional. Otherwise, check the `Troubleshooting <https://bram-hub.github.io/NanoNav/faq.html#troubleshooting>`_ guide.
@@ -104,8 +107,11 @@ MicroPython
 -----------
 
 - MicroPython is similar to Python, but some standard libraries may not be available.
+
 - You can import modules like `time`, but not `Queue` or some PyPi packages.
+
 - Helper functions are provided for Arduino, BLE, and peripheral control.
+
 - Documentation: `MicroPython Docs <https://docs.micropython.org/en/latest/>`_
 
 Next Steps
@@ -114,4 +120,5 @@ Next Steps
 Now that your Arduino is running MicroPython, you can start coding:
 
 - Modify `main.py` to experiment with the `nanonav` library.
+
 - Explore guides for using **Bluetooth**, controlling **Movement**, and reading **Sensors**.
