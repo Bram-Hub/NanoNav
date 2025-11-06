@@ -21,6 +21,8 @@ If your Arduino is not connecting to Arduino Lab, it's likely because your board
    :height: 80
    :alt: RP2040 white button
 
+If Arduino Lab is still trying to connect, quit the application and re-open it. Then, try connecting to the Arduino again.
+
 If this doesn't work, it's probably because your code has a frequently repeating while loop which keeps the Arduino occupied. You can fix this by double-pressing the white button on top of the Arduino board. This will put the Arduino into bootloader mode, allowing you to connect to it and upload new code.
 
 If you still cannot get the Arduino to connect, it could be a problem on your computer. Try changing the port you're using to connect to the Arduino.
