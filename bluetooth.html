@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bluetooth &mdash; NanoNav  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/css/s4defs-roles.css?v=35bf4f2f" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Movement" href="movement.html" />
+    <link rel="prev" title="Quick Start" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            NanoNav
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bluetooth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-example">Quick Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nanonav.BLE"><code class="docutils literal notranslate"><span class="pre">BLE</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#nanonav.BLE.on_connected"><code class="docutils literal notranslate"><span class="pre">BLE.on_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nanonav.BLE.on_disconnected"><code class="docutils literal notranslate"><span class="pre">BLE.on_disconnected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nanonav.BLE.read"><code class="docutils literal notranslate"><span class="pre">BLE.read()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nanonav.BLE.send"><code class="docutils literal notranslate"><span class="pre">BLE.send()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-from-mobile">Connecting from Mobile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-handlers-optional">Event Handlers (Optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="movement.html">Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NanoNav</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Bluetooth</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bluetooth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bluetooth">
+<span id="id1"></span><h1>Bluetooth<a class="headerlink" href="#bluetooth" title="Link to this heading"></a></h1>
+<p>Using Bluetooth Low Energy (BLE) to communicate with the NanoNav.</p>
+<section id="quick-example">
+<h2>Quick Example<a class="headerlink" href="#quick-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nanonav</span><span class="w"> </span><span class="kn">import</span> <span class="n">BLE</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="c1"># Create a Bluetooth object</span>
+<span class="n">ble</span> <span class="o">=</span> <span class="n">BLE</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;NanoNav&quot;</span><span class="p">)</span>
+
+<span class="n">ble</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">ble</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># wait until something changes, indicating a response</span>
+<span class="k">while</span> <span class="n">response</span> <span class="o">==</span> <span class="mi">43</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">ble</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received: &quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="nanonav.BLE">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">nanonav.</span></span><span class="sig-name descname"><span class="pre">BLE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">bluetooth.BLE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NANO</span> <span class="pre">RP2040'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nanonav.BLE" title="Link to this definition"></a></dt>
+<dd><p>A helpful wraper around the MicroPython BLE service functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ble</strong> (<em>bluetooth.BLE</em>) – The bluetooth object to use for BLE communication (leave as default unless you know why it should be different).</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of the device to advertise (default: “NANO RP2040”).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="nanonav.BLE.on_connected">
+<span class="sig-name descname"><span class="pre">on_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nanonav.BLE.on_connected" title="Link to this definition"></a></dt>
+<dd><p>You may create this method in a subclass of BLE to be called once the BLE connection is established.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nanonav.BLE.on_disconnected">
+<span class="sig-name descname"><span class="pre">on_disconnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nanonav.BLE.on_disconnected" title="Link to this definition"></a></dt>
+<dd><p>You may create this method in a subclass of BLE to be called once the BLE connection is lost.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nanonav.BLE.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nanonav.BLE.read" title="Link to this definition"></a></dt>
+<dd><p>Return the current value of the bluetooth characteristic, or None if an error occurred.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value of the characteristic.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int, None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="nanonav.BLE.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#nanonav.BLE.send" title="Link to this definition"></a></dt>
+<dd><p>Send value to the bluetooth characteristic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>int</em><em>, </em><em>bytes</em><em>, or </em><em>str</em>) – The value to send.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the value is not int, bytes, or str.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Just as a heads up, we’ve noticed that occasionally the value stored on the BLE characteristic gets corrupted. Wherever you call the <span class="incremental">read</span> method, it’s a good idea to verify that
+the value is within the range you expect (and not <code class="docutils literal notranslate"><span class="pre">None</span></code>), and if not, consider requesting the value again.</p>
+</div>
+</section>
+<section id="connecting-from-mobile">
+<h2>Connecting from Mobile<a class="headerlink" href="#connecting-from-mobile" title="Link to this heading"></a></h2>
+<p>Various mobile apps are available for communicating with Bluetooth Low Energy. We recommend LightBlue which is available for both iOS and Android.
+After downloading and installing it, you will need to turn your phone’s Bluetooth on and open the app (no pairing is needed for Bluetooth Low Energy).</p>
+<p>If the NanoNav is waiting for a BLE connection, you will see it as one of the connection options in LightBlue. You may need to scroll down to find it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On some versions of iOS, the BLE devices are automatically renamed, and NanoNav’s connection may show up as “Arduino” or something else. If you find yourself in this
+situation, it can be helpful to search for the Arduino’s MAC address instead, which means identifying the device once in LightBlue and keeping track of its MAC address for future connections.</p>
+</div>
+<a class="reference internal image-reference" href="_images/lightblue_devices_view.png"><img alt="LightBlue Application with Bluetooth connections available" src="_images/lightblue_devices_view.png" style="width: 400px;" />
+</a>
+<p>After clicking the connect button, you will see a screen like this, which gives information about the connection.</p>
+<a class="reference internal image-reference" href="_images/lightblue_connected_view.png"><img alt="LightBlue Application after connecting to device" src="_images/lightblue_connected_view.png" style="width: 400px;" />
+</a>
+<p>It is possible to configure the BLE for more complex behavior, but with this kit we only need to send small numbers back and forth with the Arduino. Click on the
+option at the bottom (highlighted in red in the above screenshot) to open the portal where you can perform this simplified communication with NanoNav.</p>
+<a class="reference internal image-reference" href="_images/lightblue_characteristic_view.png"><img alt="LightBlue display of BLE characteristic, with options to read or write values to it" src="_images/lightblue_characteristic_view.png" style="width: 400px;" />
+</a>
+<p>You can think of a BLE connection as a secret whiteboard that you and your friend share. There is always some number written on it, and each of you
+can look at (read) whatever is on it whenever you like, and can also change (write to) it whenever you like. Inside the LightBlue app, as shown in the
+above picture, you can click the <span class="blue">Read Again</span> button as often as you would like, but the value will only
+change when you (or NanoNav) writes to it. And you can send a number as often as you want in LightBlue, but NanoNav will not know unless you program it to
+read the value periodically. (Actually, you can setup BLE interrupts for NanoNav to run code when something changes in the BLE connection, similar to the <a class="reference internal" href="#nanonav.BLE.on_connected" title="nanonav.BLE.on_connected"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_connected()</span></code></a> and <a class="reference internal" href="#nanonav.BLE.on_disconnected" title="nanonav.BLE.on_disconnected"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_disconnected()</span></code></a>, but we think
+you’ll have an easier time getting your code to work as expected by avoiding that kind of programming for now).</p>
+</section>
+<section id="event-handlers-optional">
+<h2>Event Handlers (Optional)<a class="headerlink" href="#event-handlers-optional" title="Link to this heading"></a></h2>
+<p>MicroPython enables a variety of event handlers to be used with Bluetooth. Unless you want to explore the details of the BLE object,
+the two most accessible event handlers are for when a device connects or disconnects from your NanoNav.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nanonav</span><span class="w"> </span><span class="kn">import</span> <span class="n">BLE</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">_IRQ_GATTC_WRITE_DONE</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyBLE</span><span class="p">(</span><span class="n">BLE</span><span class="p">):</span>
+  <span class="c1"># Don&#39;t override the __init__ method, unless you know what you&#39;re doing</span>
+
+  <span class="c1"># You can create these methods to handle connection and disconnection events</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">on_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected established with NanoNav&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">on_disconnected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Disconnected from NanoNav&quot;</span><span class="p">)</span>
+
+  <span class="c1"># For advanced event handling use cases:</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">_irq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="n">_IRQ_GATTC_WRITE_DONE</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data written successfully to Bluetooth characteristic&quot;</span><span class="p">)</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_irq</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Create an instance of your subclass</span>
+<span class="n">ble</span> <span class="o">=</span> <span class="n">MyBLE</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;NanoNav&quot;</span><span class="p">)</span>
+
+<span class="n">ble</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="mi">43</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">ble</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># wait until something changes, indicating a response</span>
+<span class="k">while</span> <span class="n">response</span> <span class="o">==</span> <span class="mi">43</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">ble</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+          <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Received: &quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If interested in learning about other Bluetooth events or capabilities beyond the scope of NanoNav, see <a class="reference external" href="https://docs.micropython.org/en/latest/library/bluetooth.html">here</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="movement.html" class="btn btn-neutral float-right" title="Movement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Erik Umble, Joel McCandless, &amp; Chris Kurbiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
