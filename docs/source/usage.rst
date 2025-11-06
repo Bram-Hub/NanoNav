@@ -73,13 +73,19 @@ Running Your Code
 You have two options:
 
 **Laptop Mode**: Early stages
+
 - Keep the Arduino connected to the computer.
+
 - Click **Run** in Arduino Lab.
+
 - You can debug using print statements in the Console.
 
 **Solo Mode**: After initial testing
+
 - Copy `main.py` to the Arduino drive via File Explorer or Finder.
+
 - Arduino will run the code independently of the laptop (unplug USB).
+
 - No Console output is available in solo mode.
 
 Running the Test Code
