@@ -62,6 +62,7 @@ Connecting to the Arduino over USB
 2. In Arduino Lab, click the **Connect** button (top left).
 3. If prompted to update firmware, click **OK**. If you see an error about failing to connect, toggle the mode on the board by single-pressing the small white button on top of the Arduino (see `Troubleshooting <https://bram-hub.github.io/NanoNav/faq.html#troubleshooting>`_ for more details).
 4. Once connected, your Arduino will appear as an external drive (Windows Explorer, Mac Finder, etc.), typically named "NO NAME" or "USB Drive".
+5. Copy the files from your MicroPython code folder to the Arduino drive.
 
 .. note::
    Copy the files from the starter folder **directly** to the Arduino drive (not the folder itself).
