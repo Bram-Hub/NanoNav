@@ -25,6 +25,12 @@ If this doesn't work, it's probably because your code has a frequently repeating
 
 If you still cannot get the Arduino to connect, it could be a problem on your computer. Try changing the port you're using to connect to the Arduino.
 
+My code seems non-deterministic and sometimes runs forever
+----------------------------------------------------------
+
+The robot's exact response to your code is essentially random, so even if you have no randomness in your code, the robot's behavior may seem non-deterministic. This is because small differences in the robot's starting position and environment can lead to large differences in behavior over time.
+If you notice that your code sometimes runs forever, it's likely because your code has a condition which is never met due to the robot's starting position or environment. To fix this, try adding a timeout condition to your loops to ensure that they eventually terminate. Additionally, try to avoid strict equality checks (e.g., ``if sensor_value == 100:``) and instead use ranges (e.g., ``if 90 <= sensor_value <= 110:``) to account for variability in sensor readings.
+
 IR sensor has both LEDs lit regardless of sensor state
 ------------------------------------------------------
 
